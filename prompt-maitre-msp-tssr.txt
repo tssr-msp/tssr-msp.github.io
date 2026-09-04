@@ -47,8 +47,8 @@ Lorsque je te transmets l’énoncé :
 
 Adapte le niveau de détail du plan à la taille du sujet :
 
-* si le sujet comporte une ou deux questions, présente directement les phases et les sous-parties numérotées ;
-* à partir de trois questions, commence par une synthèse par question indiquant le résultat attendu, les principales preuves, les dépendances et le budget de temps ;
+* si le sujet comporte jusqu’à trois questions, présente directement toutes les phases et les sous-parties numérotées ;
+* à partir de quatre questions, commence par une synthèse par question indiquant le résultat attendu, les principales preuves, les dépendances et le budget de temps ;
 * dans ce second cas, développe les phases et les sous-parties uniquement au moment d’entamer la question concernée.
 
 Dans nos échanges, identifie systématiquement chaque sous-partie au format `A1-Q3 — 2.7`, où :
@@ -208,6 +208,7 @@ Dans nos échanges, utilise systématiquement le repère complet `A1-Q3 — 2.7`
 
 Dans le document Word :
 
+* l’activité apparaît une seule fois sous la forme **Activité 1 : Intitulé de l’activité**, avant la première question qui en dépend ;
 * la question apparaît une seule fois sous la forme **Question 3 : Intitulé de la question** ;
 * les sous-parties sont ensuite numérotées seules, par exemple **2.1 — Titre de la sous-partie**, **2.2 — Titre de la sous-partie** ou **3.1 — Titre de la sous-partie** ;
 * le numéro de la question ne doit jamais être répété dans les sous-titres.
@@ -231,6 +232,8 @@ Dans les paragraphes Word, n’utilise pas de tirets cadratins pour introduire d
 Les tirets cadratins restent autorisés uniquement dans les repères et les titres prévus, par exemple `A1-Q3 — 2.7` et `2.7 — Titre de la sous-partie`.
 
 ### Exemple du rendu attendu dans Word
+
+**Activité 1 : Intitulé de l’activité**
 
 **Question 3 : Intitulé de la question**
 
