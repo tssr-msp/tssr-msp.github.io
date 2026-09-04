@@ -161,6 +161,12 @@
           <button class="secondary" type="button" onclick="copyPrompt()">
             Copier le prompt
           </button>
+          <button class="secondary" type="button" onclick="copyPromptPart(1)">
+  Copier la partie 1/2
+</button>
+<button class="secondary" type="button" onclick="copyPromptPart(2)">
+  Copier la partie 2/2
+</button>
         </div>
       </article>
 
@@ -237,6 +243,55 @@
         status.className = "error";
       }
     }
+  async function copyPromptPart(part) {
+  const status = document.getElementById("copy-status");
+
+  try {
+    const response = await fetch("prompt-maitre-msp-tssr.txt");
+
+    if (!response.ok) {
+      throw new Error("Fichier introuvable");
+    }
+
+    const prompt = await response.text();
+    const marker = "\n## 7. Rédaction progressive du document Word";
+    const cutIndex = prompt.indexOf(marker);
+
+    if (cutIndex === -1) {
+      throw new Error("Point de découpage introuvable");
+    }
+
+    const parts = [
+      "[PARTIE 1/2 DU PROMPT MAÎTRE — Ne réponds pas encore. Prends connaissance de cette partie et attends la partie 2/2 avant d’appliquer les consignes.]\n\n" +
+        prompt.slice(0, cutIndex).trimEnd() +
+        "\n\n[FIN DE LA PARTIE 1/2 — Attends la partie 2/2 avant de répondre.]",
+      "[PARTIE 2/2 DU PROMPT MAÎTRE — Suite et fin. Intègre cette partie avec la partie 1/2, puis applique l’ensemble du prompt.]\n\n" +
+        prompt.slice(cutIndex).trimStart()
+    ];
+
+    const text = parts[part - 1];
+
+    try {
+      await navigator.clipboard.writeText(text);
+    } catch {
+      const area = document.createElement("textarea");
+      area.value = text;
+      area.style.position = "fixed";
+      area.style.opacity = "0";
+      document.body.appendChild(area);
+      area.select();
+      document.execCommand("copy");
+      area.remove();
+    }
+
+    status.textContent =
+      "Partie " + part + "/2 copiée dans le presse-papiers.";
+    status.className = "success";
+  } catch {
+    status.textContent = "Copie impossible. Utilise le bouton Ouvrir.";
+    status.className = "error";
+  }
+}
   </script>
 </body>
 </html>
